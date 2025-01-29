@@ -1,5 +1,6 @@
 import React from 'react';
 import {PokemonListData} from '../../intefaces/pokemonListInterfaces'
+import './PokemonItem.css';
 // Define the type for props
 
 type PokemonItemProps = {
@@ -7,9 +8,8 @@ type PokemonItemProps = {
 }
 const PokemonItem: React.FC<PokemonItemProps> = ({ pokemonData }) => {
     return (
-        <div>
-            <h1>{pokemonData.name}</h1>
-            <p>{pokemonData.url}</p>
+        <div className='pokemon-item'>
+            <h3 className="pokemon-title">{pokemonData.name}</h3>
         </div>
     )
 };
