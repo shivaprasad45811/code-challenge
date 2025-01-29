@@ -1,5 +1,18 @@
-import React from 'react'
+import React from 'react';
+import {PokemonListData} from '../../intefaces/pokemonListInterfaces'
+import PokemonItem from './PokemonItem'
+// Define the type for props
 
-export const List = () => {
-  return <p>List</p>
+type PokemonProps = {
+   pokemonList : PokemonListData[]
 }
+
+export const List: React.FC<PokemonProps> = ({ pokemonList }) => {
+  return (
+    <div>
+      {
+        pokemonList.map((item: PokemonListData) => <PokemonItem pokemonData ={item}/>)
+      }
+    </div>
+  )
+};
